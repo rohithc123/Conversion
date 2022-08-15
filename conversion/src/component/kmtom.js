@@ -48,7 +48,6 @@ export default class Kmtom extends React.Component {
     this.setState({ result: parseFloat(this.state.value) * 1000 });
 
     //  alert("A name was submitted: " + this.state.result);
-    event.preventDefault();
   }
 
   render() {
