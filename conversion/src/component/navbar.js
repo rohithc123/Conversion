@@ -7,10 +7,13 @@ export default class Navbar extends React.Component {
     return (
       <div className="container">
         <NavLink to="/kmtom">
-          <div className="tab">Kilometre to metre</div>
+          <div className="tab">Currency</div>
         </NavLink>
         <NavLink to="/mtokm">
-          <div className="tab">Meter to Kilometre</div>
+          <div className="tab">Temperature</div>
+        </NavLink>
+        <NavLink to="/distance">
+          <div className="tab">Distance</div>
         </NavLink>
       </div>
     );

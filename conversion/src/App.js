@@ -4,6 +4,7 @@ import Navbar from "./component/navbar";
 import { Routes, Route } from "react-router-dom";
 import Kmtom from "./component/kmtom";
 import Mtokm from "./component/mtokm";
+import Distance from "./component/distance";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
         <Route path="/kmtom" element={<Kmtom />} />
         <Route path="/mtokm" element={<Mtokm />} />
+        <Route path="/distance" element={<Distance />} />
       </Routes>
     </>
   );

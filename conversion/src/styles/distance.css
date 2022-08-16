@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.area {
+  height: 100%;
+  padding-top: 80px;
+  background-color: rgb(2, 215, 137);
+  height: 50em;
+
+  justify-content: center;
+}
+/* .container_enter_value {
+  background-color: rgb(37, 37, 37);
+  margin-top: 0em;
+  margin-left: 0em;
+  align-items: center;
+  justify-content: center;
+  width: 15.6em;
+  height: 24em;
+  display: inline-block;
+  flex-direction: column;
+  border-radius: 10px;
+  /* box-shadow: 5px 10px "black"; 
+  box-shadow: 5px 5px 10px 10px rgba(0, 159, 101, 0.549);
+} */
+.name {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  direction: flex;
+  justify-content: center;
+  align-items: center;
+}
+.enter_area {
+  margin: auto;
+  margin-top: 15px;
+
+  width: 17em;
+  height: 2em;
+  border-radius: 0.5em;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 0.6em;
+  font-weight: 600;
+  flex-direction: row;
+  color: black;
+}
+
+.submit_btn {
+  margin: auto;
+  margin-top: 15px;
+  font-weight: 600;
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 10em;
+  height: 2.5em;
+  border-radius: 0.5em;
+  margin-top: 10px;
+  font-size: 1em;
+}
+.result {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 20em;
+}
+.submit_btn:hover {
+  background-color: #bfe1f3;
+}
