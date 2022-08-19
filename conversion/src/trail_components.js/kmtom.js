@@ -1,8 +1,6 @@
 import * as React from "react";
 import styles from "../styles/kmtom.css";
-import Calculate from "./calculate.js";
 import convert from "convert";
-import Distance2 from "./distance.js";
 
 // export default class Kmtom extends React.Component {
 //   constructor(props) {

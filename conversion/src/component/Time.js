@@ -5,10 +5,10 @@ export default class Time extends React.Component {
   render() {
     return (
       <Conversion
-        convert_type1={"km"}
-        convert_type2={"m"}
-        convert_type3={"cm"}
-        convert_type4={"miles"}
+        convert_type1={"hours"}
+        convert_type2={"seconds"}
+        convert_type3={"minutes"}
+        convert_type4={"ms"}
       />
     );
   }

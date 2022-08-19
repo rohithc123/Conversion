@@ -9,7 +9,6 @@ import styles from "../styles/kmtom.css";
 import { setState } from "react";
 import Kmtom from "./kmtom.js";
 import convert from "convert";
-import Result from "./result.js";
 
 export default class Distance2 extends React.Component {
   constructor(props) {

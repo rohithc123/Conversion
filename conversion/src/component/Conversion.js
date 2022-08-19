@@ -3,13 +3,8 @@ import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
-// import styles from "../styles/distance2.css";
-import Calculate from "./calculate.js";
-import styles from "../styles/kmtom.css";
-import { setState } from "react";
-import Kmtom from "./kmtom.js";
+import styles from "../styles/conversion.css";
 import convert from "convert";
-import Result from "./result.js";
 
 export default class Conversion extends React.Component {
   constructor(props) {
@@ -17,8 +12,9 @@ export default class Conversion extends React.Component {
     this.state = {
       value: "0",
       result: "0",
-      type1: "km",
-      type2: "km",
+      size_select_option: 150,
+      type1: props.convert_type1,
+      type2: props.convert_type2,
       convert_type1: props.convert_type1,
       convert_type2: props.convert_type2,
       convert_type3: props.convert_type3,
@@ -50,16 +46,16 @@ export default class Conversion extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="area">
         <div className="name">
           <form onSubmit={this.handleSubmit}>
-            <Box sx={{ minWidth: 120 }} className="align">
-              <FormControl sx={{ minWidth: 120 }}>
+            <Box>
+              <FormControl sx={{ minWidth: this.state.size_select_option }}>
                 <InputLabel variant="standard" htmlFor="uncontrolled-native">
                   From
                 </InputLabel>
                 <NativeSelect
-                  defaultValue={this.state.convert1}
+                  defaultValue={this.state.convert_type1}
                   inputProps={{
                     name: "age",
                     id: "uncontrolled-native",
@@ -81,12 +77,21 @@ export default class Conversion extends React.Component {
                 </NativeSelect>
               </FormControl>
 
-              <FormControl sx={{ minWidth: 120 }}>
-                <InputLabel variant="standard" htmlFor="uncontrolled-native">
+              <FormControl
+                sx={{
+                  minWidth: this.state.size_select_option,
+                  paddingLeft: 5,
+                }}
+              >
+                <InputLabel
+                  variant="standard"
+                  htmlFor="uncontrolled-native"
+                  sx={{ paddingLeft: 7 }}
+                >
                   To
                 </InputLabel>
                 <NativeSelect
-                  defaultValue={this.state.convert_type1}
+                  defaultValue={this.state.convert_type2}
                   inputProps={{
                     name: "age",
                     id: "uncontrolled-native",

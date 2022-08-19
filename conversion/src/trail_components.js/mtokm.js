@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/kmtom.css";
-import Calculate from "./calculate.js";
 
 export default class Mtokm extends React.Component {
   constructor(props) {
