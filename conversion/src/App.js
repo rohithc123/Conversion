@@ -7,6 +7,7 @@ import Mtokm from "./component/mtokm";
 import Distance from "./component/distance";
 import Distance2 from "./component/distance2.js";
 import Calculate from "./component/calculate.js";
+import Time from "./component/Time.js";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/kmtom" element={<Kmtom />} />
         <Route path="/mtokm" element={<Mtokm />} />
         <Route path="/distance" element={<Distance2 />} />
+        <Route path="/time" element={<Time />} />
       </Routes>
     </>
   );

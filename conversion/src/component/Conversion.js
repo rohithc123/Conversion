@@ -11,14 +11,18 @@ import Kmtom from "./kmtom.js";
 import convert from "convert";
 import Result from "./result.js";
 
-export default class Distance2 extends React.Component {
+export default class Conversion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       value: "0",
       result: "0",
       type1: "km",
-      type2: "cm",
+      type2: "km",
+      convert_type1: props.convert_type1,
+      convert_type2: props.convert_type2,
+      convert_type3: props.convert_type3,
+      convert_type4: props.convert_type4,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChange1 = this.handleChange1.bind(this);
@@ -55,17 +59,25 @@ export default class Distance2 extends React.Component {
                   From
                 </InputLabel>
                 <NativeSelect
-                  defaultValue={"km"}
+                  defaultValue={this.state.convert1}
                   inputProps={{
                     name: "age",
                     id: "uncontrolled-native",
                   }}
                   onChange={this.handleChange1}
                 >
-                  <option value={"km"}>km</option>
-                  <option value={"cm"}>cm</option>
-                  <option value={"m"}>m</option>
-                  <option value={"miles"}>miles</option>
+                  <option value={this.state.convert_type1}>
+                    {this.state.convert_type1}
+                  </option>
+                  <option value={this.state.convert_type2}>
+                    {this.state.convert_type2}
+                  </option>
+                  <option value={this.state.convert_type3}>
+                    {this.state.convert_type3}
+                  </option>
+                  <option value={this.state.convert_type4}>
+                    {this.state.convert_type4}
+                  </option>
                 </NativeSelect>
               </FormControl>
 
@@ -74,17 +86,25 @@ export default class Distance2 extends React.Component {
                   To
                 </InputLabel>
                 <NativeSelect
-                  defaultValue={"cm"}
+                  defaultValue={this.state.convert_type1}
                   inputProps={{
                     name: "age",
                     id: "uncontrolled-native",
                   }}
                   onChange={this.handleChange2}
                 >
-                  <option value={"km"}>km</option>
-                  <option value={"cm"}>cm</option>
-                  <option value={"m"}>m</option>
-                  <option value={"miles"}>miles</option>
+                  <option value={this.state.convert_type1}>
+                    {this.state.convert_type1}
+                  </option>
+                  <option value={this.state.convert_type2}>
+                    {this.state.convert_type2}
+                  </option>
+                  <option value={this.state.convert_type3}>
+                    {this.state.convert_type3}
+                  </option>
+                  <option value={this.state.convert_type4}>
+                    {this.state.convert_type4}
+                  </option>
                 </NativeSelect>
               </FormControl>
             </Box>
