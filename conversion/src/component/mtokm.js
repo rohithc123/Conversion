@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/kmtom.css";
+import Calculate from "./calculate.js";
 
 export default class Mtokm extends React.Component {
   constructor(props) {
@@ -16,6 +17,11 @@ export default class Mtokm extends React.Component {
     event.preventDeafult();
 
     this.setState({ result: parseFloat(this.state.value) / 1000 });
+    // return (
+    //   <h1>
+    //     <Calculate num={this.state.value} />
+    //   </h1>
+    // );
 
     //  alert("A name was submitted: " + this.state.result);
   }

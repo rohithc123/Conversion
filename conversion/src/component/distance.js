@@ -1,14 +1,11 @@
 import * as React from "react";
+import { useState } from "react";
+import { setState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Menu, { MenuProps } from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import EditIcon from "@mui/icons-material/Edit";
-import Divider from "@mui/material/Divider";
-import ArchiveIcon from "@mui/icons-material/Archive";
-import FileCopyIcon from "@mui/icons-material/FileCopy";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Conversion_type from "./conversion_type.js";
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -27,7 +24,7 @@ const StyledMenu = styled((props: MenuProps) => (
   "& .MuiPaper-root": {
     borderRadius: 6,
     marginTop: theme.spacing(1),
-    minWidth: 180,
+    minWidth: 150,
     color:
       theme.palette.mode === "light"
         ? "rgb(55, 65, 81)"
@@ -53,14 +50,17 @@ const StyledMenu = styled((props: MenuProps) => (
   },
 }));
 
-export default function CustomizedMenus() {
-  const [anchorEl, setAnchorEl] =
-    (React.useState < null) | (HTMLElement > null);
+export default function Distance(props) {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [select_option] = useState(null);
+
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  // event: React.MouseEvent<HTMLElement>
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+
+  const handleClose = (value) => {
     setAnchorEl(null);
   };
 
@@ -76,7 +76,7 @@ export default function CustomizedMenus() {
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
-        Options
+        {select_option}
       </Button>
       <StyledMenu
         id="demo-customized-menu"
@@ -87,23 +87,64 @@ export default function CustomizedMenus() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-          Edit
+        {/* <MenuItem onClick={handleClose} disableRipple className="align">
+          km
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <FileCopyIcon />
-          Duplicate
+        <MenuItem onClick={handleClose} disableRipple className="align">
+          m
         </MenuItem>
-        <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          <ArchiveIcon />
-          Archive
+        <MenuItem onClick={handleClose} disableRipple className="align">
+          cm
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <MoreHorizIcon />
-          More
+        <MenuItem onClick={handleClose} disableRipple className="align">
+          miles
+        </MenuItem> */}
+        <div onClick={handleClose}>
+          <Conversion_type name="km" />
+          <Conversion_type name="m" />
+          <Conversion_type name="cm" />
+          <Conversion_type name="miles" />
+        </div>
+      </StyledMenu>
+      <Button
+        id="demo-customized-button"
+        aria-controls={open ? "demo-customized-menu" : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? "true" : undefined}
+        variant="contained"
+        disableElevation
+        onClick={handleClick}
+        endIcon={<KeyboardArrowDownIcon />}
+      >
+        {select_option}
+      </Button>
+      <StyledMenu
+        id="demo-customized-menu"
+        MenuListProps={{
+          "aria-labelledby": "demo-customized-button",
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        {/* <MenuItem onClick={handleClose} disableRipple className="align">
+          km
         </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple className="align">
+          m
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple className="align">
+          cm
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple className="align">
+          miles
+        </MenuItem> */}
+        <div onClick={handleClose}>
+          <Conversion_type name="km" />
+          <Conversion_type name="m" />
+          <Conversion_type name="cm" />
+          <Conversion_type name="miles" />
+        </div>
       </StyledMenu>
     </div>
   );

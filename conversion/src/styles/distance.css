@@ -93,3 +93,9 @@
 .submit_btn:hover {
   background-color: #bfe1f3;
 }
+
+.align {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
